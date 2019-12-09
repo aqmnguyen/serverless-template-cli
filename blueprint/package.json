@@ -1,0 +1,30 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "node": "10.x"
+  },
+  "dependencies": {
+    "@movable-internal/remote-lambda-helper": "^0.0.7",
+    "axios": "0.19.0"
+  },
+  "devDependencies": {
+    "serverless": "1.52.0",
+    "serverless-dotenv-plugin": "2.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy:prod": "NODE_ENV=production sls deploy",
+    "deploy:dev": "NODE_ENV=development sls deploy",
+    "invoke:prod": "sls invoke --function ",
+    "invoke:local": "SLS_DEBUG=*  sls invoke local --function "
+  }
+}

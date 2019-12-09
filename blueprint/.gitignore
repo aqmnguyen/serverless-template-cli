@@ -1,0 +1,22 @@
+# package directories
+node_modules
+/node_modules
+node_modules/
+jspm_packages
+
+# build directories
+dist
+.build
+
+# Serverless directories
+.serverless
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.development
+.env.test.local
+.env.production.local
+.env.production

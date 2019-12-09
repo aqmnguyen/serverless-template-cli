@@ -1,0 +1,23 @@
+service:
+  name: client-key-remote-file
+
+plugins:
+  - serverless-dotenv-plugin
+
+provider:
+  name: aws
+  deploymentBucket: movableink-serverless-us-east-1
+  region: us-east-1
+  runtime: nodejs10.x
+  profile: default
+  stage: ${env:STAGE, 'dev'}
+
+functions:
+  clientNameKeyRemoteFile:
+    handler: handler.clientNameKeyRemoteFile
+    name: clientNameKeyRemoteFile-${self:provider.stage}
+    description: Grabs file from set location to move into a our automatic DS service
+    timeout: 20 # in seconds, default is 6
+    memorySize: 1024 # optional, in MB, default is 1024
+    events:
+      - schedule: cron(0 * * * ? *) # to run every hour on the hour
