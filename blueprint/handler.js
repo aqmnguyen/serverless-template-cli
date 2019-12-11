@@ -1,5 +1,4 @@
 const axios = require('axios');
-const xmlParser = require('xml2json');
 const PapaParse = require('papaparse');
 
 const {

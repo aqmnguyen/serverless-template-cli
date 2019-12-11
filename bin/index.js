@@ -2,6 +2,7 @@
 
 const package = require('./../package.json');
 const program = require('commander');
+const chalk = require('chalk');
 
 const createTemplate = require('../lib/createTemplate');
 
@@ -26,16 +27,16 @@ program.on('--help', () => { });
 program.parse(process.argv);
 
 if (!projectDirectory) {
-  console.error('No Directory Path provided');
-  console.error('Full command should be: ')
-  console.error('remote-template directoryName -n serviceName');
+  console.error(chalk.red('No Directory Path provided'));
+  console.error(chalk.red('Full command should be: '))
+  console.error(chalk.green('remote-template directoryName -n serviceName'));
   process.exit(1);
 }
 
 if (!program.name) {
-  console.error('No service name provided');
-  console.error('Full command should be: ')
-  console.error('remote-template directoryName -n serviceName')
+  console.error(chalk.red('No service name provided'));
+  console.error(chalk.red('Full command should be: '));
+  console.error(chalk.green('remote-template directoryName -n serviceName'));
   process.exit(1);
 }
 
@@ -43,4 +44,5 @@ if (!program.name) {
  * Create template
  */
 
+console.log(chalk.blue(`Creating ${projectDirectory}`));
 createTemplate(projectDirectory, program);
