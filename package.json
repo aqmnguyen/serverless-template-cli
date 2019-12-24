@@ -4,6 +4,7 @@
   "author": "Michael Nguyen <aqmnguyen@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^3.0.0",
     "commander": "^4.0.1",
     "cross-spawn": "^7.0.1"
   },
