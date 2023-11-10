@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@movable-internal/remote-lambda-helper": "^0.0.7",
-    "axios": "0.19.0"
+    "axios": "1.6.0"
   },
   "devDependencies": {
     "serverless": "1.52.0",
